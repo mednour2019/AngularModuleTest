@@ -1,0 +1,129 @@
+.dialog-title {
+  background-color: #3f51b5;
+  color: white;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dialog-title .close-button {
+  color: white;
+}
+
+.dialog-actions {
+  background-color: #f1f1f1;
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+  background-color: #f1f1f1;
+}
+
+.cancel-button {
+  background-color: #f44336;
+  color: white;
+  margin-right: 8px;
+  font-size: small;
+  width: 100px;
+}
+
+.save-button {
+  background-color: #3f51b5;
+  color: white;
+  font-size: small;
+  width: 100px;
+}
+
+.cancel-button:hover,
+.save-button:hover {
+  opacity: 0.8;
+}
+
+.cancel-button[disabled],
+.save-button[disabled] {
+  background-color: #e0e0e0;
+}
+.full-width {
+  width: 250px !important;
+}
+.label-avatar {
+  font-size: smaller;
+  color: blue;
+}
+.address-panel {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  position: relative;
+  background-color: #f9f9f9;
+}
+
+.panel-title {
+  /* position: absolute;*/
+  /*left: 16px;*/
+  background-color: #f9f9f9;
+  padding: 0 8px;
+  font-size: 1.2em;
+}
+
+.full-width {
+  width: 100%;
+
+  /*responsive
+
+/* Container for the form */
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Row styling */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  /* Column styling */
+  .col-sm {
+    flex: 1 1 100%;
+  }
+
+  /* Full width for form fields */
+  .full-width {
+    width: 100%;
+  }
+
+  /* File input wrapper */
+  .file-input-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Dialog actions */
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  /* Responsive adjustments */
+  @media (min-width: 768px) {
+    .col-sm {
+      flex: 1 1 calc(33.333% - 20px);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .col-sm {
+      flex: 1 1 calc(33.333% - 20px);
+    }
+  }
+}

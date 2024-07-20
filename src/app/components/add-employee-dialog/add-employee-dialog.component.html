@@ -1,0 +1,229 @@
+<h2 mat-dialog-title class="dialog-title">
+  Add New Employee
+  <button mat-icon-button (click)="onNoClick()" class="close-button">
+    <mat-icon>close</mat-icon>
+  </button>
+</h2>
+<mat-dialog-content>
+  <form [formGroup]="employeeForm">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <mat-form-field class="full-width">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" />
+            <mat-error
+              *ngIf="employeeForm.get('firstName')?.hasError('required')"
+            >
+              FirstName is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm">
+          <mat-form-field class="full-width">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName" />
+            <mat-error
+              *ngIf="employeeForm.get('lastName')?.hasError('required')"
+            >
+              lastName is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm">
+          <mat-form-field class="full-width">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput formControlName="dob" type="date" />
+            <mat-error *ngIf="employeeForm.get('dob')?.hasError('required')">
+              Date of birth is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="address-panel">
+        <h3 class="panel-title">Address:</h3>
+        <div class="row">
+          <div class="col-sm">
+            <mat-form-field class="full-width">
+              <mat-label>Street</mat-label>
+              <input matInput formControlName="street" />
+              <mat-error
+                *ngIf="employeeForm.get('street')?.hasError('required')"
+              >
+                Street is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm">
+            <mat-form-field class="full-width">
+              <mat-label>City</mat-label>
+              <input matInput formControlName="city" />
+              <mat-error *ngIf="employeeForm.get('city')?.hasError('required')">
+                City is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm">
+            <mat-form-field class="full-width">
+              <mat-label>Country</mat-label>
+              <mat-select formControlName="country">
+                <mat-option *ngFor="let country of countries" [value]="country">
+                  {{ country }}
+                </mat-option>
+              </mat-select>
+              <mat-error
+                *ngIf="employeeForm.get('country')?.hasError('required')"
+              >
+                Country is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm">
+          <mat-form-field class="full-width">
+            <mat-label>Age</mat-label>
+            <input matInput formControlName="age" type="number" />
+            <mat-error *ngIf="employeeForm.get('age')?.hasError('required')">
+              Age is required
+            </mat-error>
+            <mat-error *ngIf="employeeForm.get('age')?.hasError('min')">
+              Age cannot be inf of 18
+            </mat-error>
+            <mat-error *ngIf="employeeForm.get('age')?.hasError('max')">
+              Age cannot be more than 120
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm">
+          <!-- Phone Field -->
+          <mat-form-field class="full-width">
+            <mat-label>Phone</mat-label>
+            <input matInput formControlName="contactNumber" type="number" />
+            <mat-error
+              *ngIf="employeeForm.get('contactNumber')?.hasError('required')"
+            >
+              Phone is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm">
+          <!-- Email Field -->
+          <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" type="email" />
+            <mat-error *ngIf="employeeForm.get('email')?.hasError('required')">
+              Email is required
+            </mat-error>
+            <mat-error *ngIf="employeeForm.get('email')?.hasError('email')">
+              Invalid email address
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <mat-form-field class="full-width">
+            <mat-label>Salary </mat-label>
+            <input matInput formControlName="salary" type="number" />
+            <mat-error *ngIf="employeeForm.get('salary')?.hasError('required')">
+              Salary is required
+            </mat-error>
+            <mat-error *ngIf="employeeForm.get('salary')?.hasError('min')">
+              Age cannot be inf of 700
+            </mat-error>
+            <mat-error *ngIf="employeeForm.get('salary')?.hasError('max')">
+              Age cannot be more than 120000
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm">
+          <div class="file-input-wrapper" class="full-width">
+            <label for="fileInput">Image</label>
+            <input id="fileInput" type="file" (change)="onFileChange($event)" />
+            <mat-error
+              *ngIf="employeeForm.get('imageUrl')?.hasError('required')"
+            >
+              Image is required
+            </mat-error>
+          </div>
+        </div>
+        <div class="col-sm">
+          <mat-label class="label-avatar"
+            >*please select image from Path (my angular project):
+            assets/dist/img</mat-label
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <mat-radio-group formControlName="gender">
+            <mat-label>Gender:</mat-label>
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female">Female</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="col-sm">
+          <mat-form-field class="full-width">
+            <mat-label>Company</mat-label>
+            <input matInput formControlName="company" />
+            <mat-error
+              *ngIf="employeeForm.get('company')?.hasError('required')"
+            >
+              Company is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm">
+          <mat-form-field class="full-width">
+            <mat-label>Package</mat-label>
+            <input matInput formControlName="package" type="number" />
+            <mat-error
+              *ngIf="employeeForm.get('package')?.hasError('required')"
+            >
+              Package is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <mat-form-field class="full-width">
+            <mat-label>Education</mat-label>
+            <input matInput formControlName="education" />
+            <mat-error
+              *ngIf="employeeForm.get('education')?.hasError('required')"
+            >
+              education is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm">
+          <mat-form-field class="full-width">
+            <mat-label>Experience</mat-label>
+            <input matInput formControlName="experience" type="number" />
+            <mat-error
+              *ngIf="employeeForm.get('experience')?.hasError('required')"
+            >
+              experience is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm"></div>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions class="dialog-actions">
+  <button mat-button class="cancel-button" (click)="onNoClick()">Cancel</button>
+  <button
+    mat-button
+    class="save-button"
+    (click)="onSaveClick()"
+    [disabled]="isUploading || !employeeForm.valid"
+  >
+    Save
+  </button>
+</mat-dialog-actions>

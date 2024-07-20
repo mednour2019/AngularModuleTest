@@ -1,0 +1,120 @@
+.employees-title {
+  font-size: 2.5em;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "Arial, sans-serif";
+  font-weight: bold;
+  /*text-transform: uppercase;*/
+  letter-spacing: 2px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-color: #007bff;
+}
+
+.search-input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.custom-button {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.custom-button.ml-1 {
+  margin-left: 1rem;
+}
+
+.custom-dialog-container {
+  width: 90vw;
+  max-width: 1000px;
+  height: auto;
+  max-height: 90vh;
+  position: relative;
+  top: 5%;
+}
+
+/* Adjustments for larger screens */
+@media (min-width: 768px) {
+  .custom-dialog-container {
+    width: 70vw;
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-dialog-container {
+    width: 60vw;
+    max-width: 800px;
+  }
+}
+.col-tab {
+  width: 150px;
+  color: #007bff;
+}
+/* Apply pointer cursor to all table rows */
+table tr {
+  cursor: pointer;
+}
+
+table td {
+  cursor: pointer;
+}
+
+table tr:hover {
+  background-color: lightgray;
+}
+/* Style for the selected row */
+table tr.selected {
+  background-color: lightgray;
+}
+
+mat-sort-header-content {
+  width: 100px !important;
+}
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 150px;
+  max-width: 150px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.checkbox-item {
+  margin-bottom: 8px;
+}
+.hide-show {
+  font-size: medium;
+  font-weight: bold;
+}
+.table-container {
+  overflow-x: auto;
+  display: block;
+}
+
+.mat-elevation-z8 {
+  min-width: 1000px; /* Adjust this value based on the number of columns */
+}
+
+.checkbox-item label {
+  cursor: pointer;
+}

@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"
+          ><i class="fas fa-bars"></i
+        ></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block" *ngFor="let item of menu">
+        <a routerLink="{{ item.url }}" class="{{ item.class }}"
+          ><b>{{ item.label | uppercase }}</b></a
+        >
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+      <li class="nav-item dropdown user-menu">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+          <img
+            src="assets/dist/img/AvatarTest.png"
+            class="user-image img-circle elevation-2"
+            alt="User Image"
+          />
+          <span class="d-none d-md-inline"><b>Test</b></span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <!-- User image -->
+          <li class="user-header bg-secondary login-col">
+            <img
+              src="assets/dist/img/AvatarTest.png"
+              class="img-circle elevation-2"
+              alt="User Image"
+            />
+
+            <p>Test</p>
+          </li>
+
+          <li class="user-footer"></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          data-widget="fullscreen"
+          role="button"
+          (click)="toggleFullscreen()"
+        >
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+</div>

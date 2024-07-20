@@ -1,0 +1,13 @@
+.login-col{
+  background-color:#6c757d80!important
+}
+/* Add custom styles for responsiveness if needed */
+@media (max-width: 767px) {
+  .navbar-nav .nav-item .nav-link {
+    font-size: 14px;
+  }
+  .navbar-nav .nav-item.dropdown .dropdown-menu {
+    width: 100%;
+    text-align: center;
+  }
+}

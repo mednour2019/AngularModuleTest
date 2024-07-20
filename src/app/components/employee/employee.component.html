@@ -1,0 +1,272 @@
+<div class="container">
+  <div class="row">
+    <h1 class="employees-title">Employees List</h1>
+  </div>
+  <div class="row">
+    <div class="col-sm"></div>
+    <div class="col-sm">
+      <mat-label class="hide-show">hide/show columns </mat-label>
+      <div class="checkbox-list">
+        <div *ngFor="let column of allColumns" class="checkbox-item">
+          <input
+            type="checkbox"
+            [id]="column"
+            [checked]="displayedColumns.includes(column)"
+            (change)="toggleColumn($event, column)"
+          />
+          <label [for]="column">{{ column }}</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm"></div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col">
+      <a
+        (click)="openDialog()"
+        mat-raised-button
+        color="primary"
+        class="custom-button ml-1"
+      >
+        <mat-icon>add</mat-icon>
+        Add New Employee
+      </a>
+    </div>
+    <div class="col-8">
+      <input
+        type="text"
+        class="search-input"
+        placeholder="Search Employees"
+        [(ngModel)]="filterString"
+        (keyup)="filterEmployees()"
+      />
+    </div>
+  </div>
+  <br />
+  <!-- Checkboxes for columns in a vertical list -->
+  <div class="row">
+    <div class="table-container">
+      <div class="mt-1 mat-elevation-z8">
+        <table mat-table matSort [dataSource]="dataSource">
+          <!-- FirstName Column -->
+          <ng-container matColumnDef="firstName">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              class="col-tab"
+            >
+              First Name
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
+          </ng-container>
+          <!-- FirstName Column -->
+          <!-- lastName Column -->
+          <ng-container matColumnDef="lastName">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              class="col-tab"
+            >
+              Last Name
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+          </ng-container>
+          <!-- lastName Column -->
+
+          <ng-container matColumnDef="address">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              class="col-tab"
+            >
+              Address
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.address }}</td>
+          </ng-container>
+          <!-- age Column -->
+          <ng-container matColumnDef="age">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              class="col-tab"
+            >
+              Age
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.age }}</td>
+          </ng-container>
+          <!-- age Column -->
+          <!-- phone Column -->
+          <ng-container matColumnDef="contactNumber">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              class="col-tab"
+            >
+              Contact Number
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ checkPhone(element.contactNumber) }}
+            </td>
+          </ng-container>
+          <!-- phone Column -->
+
+          <!-- DateOfBirth Column -->
+          <ng-container matColumnDef="dob">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              class="col-tab"
+            >
+              Date Of Birth
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ formatEmployeeDOB(element.dob) }}
+            </td>
+          </ng-container>
+
+          <!-- email Column -->
+          <ng-container matColumnDef="email">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              class="col-tab"
+            >
+              Email
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ checkEmail(element.email) }}
+            </td>
+          </ng-container>
+          <!-- email Column -->
+
+          <!-- salary Column -->
+          <ng-container matColumnDef="salary">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              class="col-tab"
+            >
+              Salary
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.salary }}</td>
+          </ng-container>
+          <!-- salary Column -->
+          <!-- salary Column -->
+          <ng-container matColumnDef="experience">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              class="col-tab"
+            >
+              Experience
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.experience }}</td>
+          </ng-container>
+          <!-- salary Column -->
+          <!-- salary Column -->
+          <ng-container matColumnDef="gender">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              class="col-tab"
+            >
+              Gender
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.gender }}</td>
+          </ng-container>
+          <!-- salary Column -->
+          <!-- salary Column -->
+          <ng-container matColumnDef="company">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              class="col-tab"
+            >
+              Company
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.company }}</td>
+          </ng-container>
+          <!-- salary Column -->
+          <!-- salary Column -->
+          <ng-container matColumnDef="package">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              class="col-tab"
+            >
+              Package
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.package }}</td>
+          </ng-container>
+          <!-- salary Column -->
+          <!-- salary Column -->
+          <ng-container matColumnDef="education">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              class="col-tab"
+            >
+              Education
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.education }}</td>
+          </ng-container>
+          <!-- salary Column -->
+          <!-- Image Column -->
+          <!-- Image Column -->
+          <ng-container matColumnDef="imageUrl">
+            <th mat-header-cell *matHeaderCellDef class="col-tab">Photo</th>
+            <td mat-cell *matCellDef="let element">
+              <img
+                [src]="getImageUrl(element.imageUrl)"
+                alt="{{ element.firstName }} {{ element.lastName }}"
+                width="50"
+                height="50"
+              />
+            </td>
+          </ng-container>
+          <!-- edit Column -->
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef class="col-tab">Action</th>
+            <td mat-cell *matCellDef="let element">
+              <a (click)="openConfirmDialog(element.id)">
+                <mat-icon color="warn">delete</mat-icon>
+              </a>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr
+            mat-row
+            *matRowDef="let row; columns: displayedColumns"
+            (click)="selectRow(row)"
+            [class.selected]="selectedRow === row"
+          ></tr>
+        </table>
+        <mat-paginator
+          [length]="100"
+          [pageSize]="10"
+          [pageSizeOptions]="[5, 10, 25, 100]"
+          aria-label="Select page"
+          [ngStyle]="{
+            'background-color': paginatorBackgroundColor,
+            color: paginatorTextColor
+          }"
+        >
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

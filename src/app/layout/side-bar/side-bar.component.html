@@ -1,0 +1,62 @@
+
+ <!-- Main Sidebar Container -->
+ <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Brand Logo -->
+  <a href="" class="brand-link">
+    <img src="{{logoSolution}}" alt="{{logoalt | uppercase}}" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <span class="brand-text font-weight-light">{{mySolutionName | uppercase}}</span>
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+
+
+    <!-- SidebarSearch Form -->
+    <div class="form-inline">
+      <div class="input-group" data-widget="sidebar-search">
+        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
+        aria-label="Search" [(ngModel)]="searchText"  (ngModelChange)="filterMenu()">
+        <div class="input-group-append">
+          <button class="btn btn-sidebar" (click)="clearInput()">
+            <i class="fas fa-search fa-fw"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+             with font-awesome or any other icon font library -->
+
+        <li class="nav-item menu-open" *ngFor="let item of menu">
+
+          <a class="{{item.class}}">
+            <i class="{{item.icon}}"></i>
+            <p>{{item.label | uppercase}}
+              <i class="right fas fa-angle-left"></i>
+              <span class="badge badge-info right">{{item.subMenu.length}}</span>
+
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <ng-container *ngFor="let subMenu of item.subMenu">
+            <li class="nav-item" *ngIf="item.show  && subMenu.show" >
+              <a routerLink="{{subMenu.url}}"  class="{{subMenu.classa}}">
+                <i class="{{subMenu.classi}}"></i>
+                <p>{{subMenu.label | uppercase}}</p>
+              </a>
+            </li>
+          </ng-container>
+
+          </ul>
+        </li>
+
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>
