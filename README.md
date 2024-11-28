@@ -1,27 +1,53 @@
-# Nour
+# Angular DataTable Implementation
+# The project is in master Branch
+# Description
+In this technical test project, I implemented a dynamic and responsive data table using Angular, designed to manage employee data retrieved from an external API. The project showcases advanced table functionalities, including pagination, sorting, filtering, and CRUD (Create, Read, Update, Delete) operations, all handled on the frontend.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+![Screen Shot](https://prtfnour.vercel.app/images/portfolio/project1.JPG)
+## Demo Video
 
-## Development server
+Check out the demo video of the project [here](https://drive.google.com/file/d/1SVLCW8LEn6g3AzBg9pFenYHlbkttpMty/view?usp=sharing)
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- 🧩  Responsive Design: Optimized for all devices.
+- 🧩  Pagination: Implemented pagination to display 10 items per page by default, with the option to change the number of items displayed.
+- 🧩 Sorting: Enabled sorting on all columns, allowing users to sort data in ascending or descending order
+- 🧩 Filtering: Provided a comprehensive filtering feature to search across all columns, making it easy to find specific records.
+- 🧩 CRUD Operations: Added functionality to add and remove employees directly from the table on the frontend, providing a seamless user experience.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
 
-## Build
+### Prerequisites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Angular
+- Material Design
+-Type Script
+ - Rest Api
+ - Html
+ - Css
+ - Bootstra
+ - RxJS
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Contributing
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-## Further help
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+
+Mohamed Nour KHammeri - [@My-Web-Site](https://prtfnour.vercel.app) - mednour.khl@gmail.com
+
+Project Link: [https://github.com/mednour2019/AngularModuleTest](https://github.com/mednour2019/AngularModuleTest)
+
